@@ -888,18 +888,18 @@ class SwinUnet(nn.Module):
                                             patch_size=4,
                                             in_chans=in_chans,
                                             num_classes=self.num_classes,
-                                            # Cấu hình SwinV2-Base theo config:
-                                            embed_dim=128,
+                                            # Cấu hình SwinV2-Large theo config:
+                                            embed_dim=192,
                                             depths=[2, 2, 18, 2],
-                                            num_heads=[4, 8, 16, 32],
-                                            window_size=8,
+                                            num_heads=[6, 12, 24, 48],
+                                            window_size=16,
                                             pretrained_window_sizes=[
-                                                8, 8, 8, 8],
+                                                12, 12, 12, 6],
                                             mlp_ratio=4,
                                             qkv_bias=True,
                                             qk_scale=None,
                                             drop_rate=0.0,
-                                            drop_path_rate=0.5,
+                                            drop_path_rate=0.2,
                                             ape=False,
                                             patch_norm=True,
                                             use_checkpoint=False)
